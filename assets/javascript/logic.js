@@ -29,7 +29,7 @@
                 var gifDiv = $("<div>");*/
 
                 //grabs image url from ajax request
-                var imageUrl = response.data.images.fixed_height.url;
+                var imageUrl = response.data[0].images.fixed_height.url;
 
                 //creates image tag used to display image
                 var gifElement = $('<img>');
@@ -41,11 +41,11 @@
                 $('.gifDump').append(gifElement);
 				
             })
-
+   
     }
-
 //displaying gifs when clicked   
 $(document).on('click','.sportButton', generateGifInfo);
+
 
 
     //iterates through the array of given sports
