@@ -8,7 +8,7 @@ $(document).ready(function() {
     //_________FUNCTIONS__________
 
     function generateGifInfo() {
-        
+
         //empty the displayed gifs everytime a button is clicked.
          $(".gifDump").empty();
 
@@ -31,16 +31,18 @@ $(document).ready(function() {
 
 
             //takes the rating from api call 
-            var rating = response[i].rating;
+            var rating = " Rating: " + response[i].rating;
          
+
             //creates image tag used to display image
-            var gifElement = $('<img>');
+            var gifElement = $('<img class="well">');
 
             //attaches image url src to created img tag
             gifElement.attr('src', imageUrl);
             gifElement.attr('alt', 'sport image');
 
-            $('.gifDump').append(gifElement, rating);
+            $('.gifDump').append(gifElement);
+            $('.rating').append(rating);
 
                 }
         })
@@ -74,15 +76,17 @@ $(document).ready(function() {
     generateButton();
 
     
-     $('.sportButton').on("click", function(event) { 
+     $('#gifSubmit').on("click", function(event) { 
         event.preventDefault();
+         $("#buttonsDump").empty();
 
+            console.log(event)
         var sportGif = $('#gifInput').val().trim();
 
         topics.push(sportGif);
-
+            console.log(topics)
             
-
+                generateButton();
     });
 });
 
