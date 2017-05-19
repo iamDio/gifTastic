@@ -26,6 +26,11 @@ $(document).ready(function() {
             //grabs image url from ajax request
             var imageUrl = response[i].images.fixed_height.url;
 
+
+            //takes the rating from api call 
+            var rating = response[i].rating;
+            
+
             //creates image tag used to display image
             var gifElement = $('<img>');
 
@@ -33,7 +38,7 @@ $(document).ready(function() {
             gifElement.attr('src', imageUrl);
             gifElement.attr('alt', 'sport image');
 
-            $('.gifDump').append(gifElement);
+            $('.gifDump').append(gifElement, rating);
                 }
         })
 
