@@ -1,5 +1,4 @@
-show only 10 gifs on the page. 
+
 randomize gifs everytime user clicks. 
-put text box and submit button in different <div> in a different column than the gifs 
-generate new button everytime user submits
+load images as still and allow user to play and stop with click
 style

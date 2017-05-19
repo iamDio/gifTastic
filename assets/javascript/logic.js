@@ -35,7 +35,7 @@ $(document).ready(function() {
          
 
             //creates image tag used to display image
-            var gifElement = $('<img class="well">');
+            var gifElement = $('<img class="sport-image well">');
 
             //attaches image url src to created img tag
             gifElement.attr('src', imageUrl);
@@ -51,13 +51,9 @@ $(document).ready(function() {
 
     //displaying gifs when clicked   
     $(document).on('click', '.sportButton', generateGifInfo);
-   
-
-
 
     //iterates through the array of given sports
     function generateButton() {
-    
 
         topics.forEach(function(category) {
             var buttons = $("<button>");
@@ -88,12 +84,21 @@ $(document).ready(function() {
             
                 generateButton();
     });
+
+$('.sport-image').on('click',function(){
+
+    var state = $(this).attr("data-state");
+
+    if(state === "still"){
+        $(this).attr("src", $(this).attr('data-animate'));
+        $(this).attr("data-state","animate");
+    } else {
+        $(this).attr("src", $(this).attr('data-still'));
+        $(this).attr("data-state","still")
+    }
 });
 
-
-
-
-
+});
 
 //__________________________________________-
 /*
