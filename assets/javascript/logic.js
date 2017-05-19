@@ -8,6 +8,9 @@ $(document).ready(function() {
     //_________FUNCTIONS__________
 
     function generateGifInfo() {
+        
+        //empty the displayed gifs everytime a button is clicked.
+         $(".gifDump").empty();
 
         var sport = $(this).attr('data-name');
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + sport +
@@ -29,8 +32,7 @@ $(document).ready(function() {
 
             //takes the rating from api call 
             var rating = response[i].rating;
-            
-
+         
             //creates image tag used to display image
             var gifElement = $('<img>');
 
@@ -39,6 +41,7 @@ $(document).ready(function() {
             gifElement.attr('alt', 'sport image');
 
             $('.gifDump').append(gifElement, rating);
+
                 }
         })
 
@@ -52,7 +55,7 @@ $(document).ready(function() {
 
     //iterates through the array of given sports
     function generateButton() {
-        $("#buttonsDump").empty();
+    
 
         topics.forEach(function(category) {
             var buttons = $("<button>");
