@@ -12,6 +12,7 @@ $(document).ready(function() {
         //empty the displayed gifs everytime a button is clicked.
          $(".gifDump").empty();
 
+         //assigns data with attribute name as a search parameter in the queryURL
         var sport = $(this).attr('data-name');
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + sport +
             "&api_key=dc6zaTOxFJmzC&limit=10";
